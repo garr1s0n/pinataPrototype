@@ -161,13 +161,15 @@ textarea {
         top: 0;
         left: 0;
         width: 40px;
-        transition: opacity .5s ease-in;
+        transition: opacity .5s ease-in, transform .25s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transform: rotateX(0) rotateZ(0);
     }
         .gameon .stick {
             opacity: 1;
         }
         .gameon .hitting .stick {
             transform: rotateX(40deg) rotateZ(15deg);
+            transition: transform .1s ease-out;
         }
     
 
