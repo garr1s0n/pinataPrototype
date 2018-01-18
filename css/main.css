@@ -144,7 +144,12 @@ textarea {
     top: 0;
     left: 50%;
     margin-left: -37.5%;
+    opacity: 0;
+    transition: opacity .35s ease-in;
 }
+    .gameon .pinata img {
+        opacity: 1;
+    }
 .swingArea {
     position: absolute;
     top: 0;
