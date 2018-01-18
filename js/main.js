@@ -6,7 +6,7 @@ var results = {
     prize: ''
 }
 var div_moving = document.getElementById('stick');
-var parent_div = 'gameContainer';
+var parent_div = 'swingArea';
 
 function appInit() {
 
@@ -54,10 +54,25 @@ function gameInit() {
 
     document.getElementById('gameArea').classList.add('gameon');
 
-    document.getElementById(parent_div).addEventListener('mousemove', function(e){
+    var gameParent = document.getElementById(parent_div)
+
+    gameParent.addEventListener('mousemove', function(e){
         mouseXY = movingDiv.getCoords(e);
         div_moving.style.left = mouseXY.xp + 20 +'px';
         div_moving.style.top = mouseXY.yp - 200 +'px';
+    });
+
+    gameParent.addEventListener('mousedown', function() {
+        gameParent.classList.add('hitting');
+    });
+
+    
+    gameParent.addEventListener('mouseout', function() {
+        gameParent.classList.remove('hitting');
+    });
+    
+    gameParent.addEventListener('mouseup', function() {
+        gameParent.classList.remove('hitting');
     });
 }
 
