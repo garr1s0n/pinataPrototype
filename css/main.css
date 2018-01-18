@@ -209,6 +209,8 @@ textarea {
     transform-origin: 35% 0;
     -webkit-animation: swinging .85s ease-in-out forwards 1;
     animation: swinging .85s ease-in-out forwards 1;
+    -webkit-animation-delay: .15s;
+    animation-delay: .15s;
 }
 
 /* ==========================================================================
