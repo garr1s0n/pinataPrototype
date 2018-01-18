@@ -5,6 +5,7 @@ var results = {
     result: '',
     prize: ''
 }
+var pinata = document.getElementById('pinataTarget');
 var div_moving = document.getElementById('stick');
 var parent_div = 'swingArea';
 
@@ -64,6 +65,7 @@ function gameInit() {
 
     gameParent.addEventListener('mousedown', function() {
         gameParent.classList.add('hitting');
+        hitPinata();
     });
 
     
@@ -103,3 +105,9 @@ var movingDiv = {
     }
 };
 
+function hitPinata() {
+    pinata.classList.add('pinataHit');
+    setTimeout(function() {
+        pinata.classList.remove('pinataHit');
+    }, 1200)
+}

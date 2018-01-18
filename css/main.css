@@ -188,6 +188,29 @@ textarea {
         }
     
 
+@-webkit-keyframes swinging{
+    0%{transform: rotate(0deg);}
+    5%{transform: rotate(15deg);}
+    33%{transform: rotate(-10deg)}
+    66%{transform: rotate(15deg);}
+    100%{transform: rotate(0deg);}
+}
+    
+@keyframes swinging{
+    0%{transform: rotate(0deg);}
+    5%{transform: rotate(15deg);}
+    33%{transform: rotate(-10deg)}
+    66%{transform: rotate(15deg);}
+    100%{transform: rotate(0deg);}
+}
+    
+.pinataHit{
+    -webkit-transform-origin: 35% 0;
+    transform-origin: 35% 0;
+    -webkit-animation: swinging .85s ease-in-out forwards 1;
+    animation: swinging .85s ease-in-out forwards 1;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
