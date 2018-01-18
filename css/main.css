@@ -109,6 +109,13 @@ textarea {
     }
 
 /* Game */
+#gameArea h1 {
+    margin-bottom: 0;
+}
+#gameArea h1 + p {
+    margin-bottom: .35em;
+}
+
 .gameSizer {
     position: relative;
     width: 100%;
@@ -137,6 +144,10 @@ textarea {
   user-select: none;
 }
 
+.appear {
+    transition: opacity .35s ease-in;
+}
+
 .pinata img {
     display: block;
     width: 75%;
@@ -145,7 +156,6 @@ textarea {
     left: 50%;
     margin-left: -37.5%;
     opacity: 0;
-    transition: opacity .35s ease-in;
 }
     .gameon .pinata img {
         opacity: 1;
