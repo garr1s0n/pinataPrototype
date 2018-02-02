@@ -77,25 +77,37 @@ function gameInit() {
 
     var gameParent = document.getElementById(parent_div)
 
-    gameParent.addEventListener('mousemove', function(e){
-        mouseXY = movingDiv.getCoords(e);
-        div_moving.style.left = mouseXY.xp + 20 +'px';
-        div_moving.style.top = mouseXY.yp - 200 +'px';
-    });
+    if (!Modernizr.touchevents){ 
+        $(gameParent).mousemove(function(e){
+            $("#stick").css({left:e.pageX, top:e.pageY});
+        });
+        gameParent.addEventListener('mousedown', function() {
+            gameParent.classList.add('hitting');
+            hitPinata();
+        });
+        gameParent.addEventListener('mouseout', function() {
+            gameParent.classList.remove('hitting');
+        });
+        
+        gameParent.addEventListener('mouseup', function() {
+            gameParent.classList.remove('hitting');
+        });
+    } else {
+        var swingArea = document.getElementById('swingArea');
+        var swing = new Hammer(swingArea);
 
-    gameParent.addEventListener('mousedown', function() {
-        gameParent.classList.add('hitting');
-        hitPinata();
-    });
+        swing.on('swiperight', function() {
+            gameParent.classList.add('hittingRight');
+            hitPinata();
+            setTimeout(function() { gameParent.classList.remove('hittingRight'); }, 100);
+        });
+        swing.on('swipeleft', function() {
+            gameParent.classList.add('hittingLeft');
+            hitPinata();
+            setTimeout(function() { gameParent.classList.remove('hittingLeft'); }, 100);
+        });
+    }
 
-    
-    gameParent.addEventListener('mouseout', function() {
-        gameParent.classList.remove('hitting');
-    });
-    
-    gameParent.addEventListener('mouseup', function() {
-        gameParent.classList.remove('hitting');
-    });
 }
 
 var movingDiv = {

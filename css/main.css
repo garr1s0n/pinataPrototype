@@ -203,7 +203,20 @@ html, body, .wrapper {
             transform: rotateX(40deg) rotateZ(15deg);
             transition: transform .1s ease-out;
         }
-    
+        .touchevents .stick {
+            left: 50%;
+            top: 50%;
+            margin-left: -20px;
+            margin-top: -220px;
+        }
+        .touchevents .gameon .hittingLeft .stick {
+            transform: rotateX(40deg) rotateZ(-15deg);
+            transition: transform .1s ease-out;
+        }
+        .touchevents .gameon .hittingRight .stick {
+            transform: rotateX(40deg) rotateZ(15deg);
+            transition: transform .1s ease-out;
+        }
 
 @-webkit-keyframes swinging{
     0%{transform: rotate(0deg);}
