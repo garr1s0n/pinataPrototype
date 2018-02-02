@@ -49,11 +49,31 @@ function gameSetup() {
     gameInit();
 }
 
+function setupFade() {
+    var fadeTarget = document.getElementById('gameSetup');
+    var fadeEffect = setInterval(function () {
+        if (!fadeTarget.style.opacity) {
+            fadeTarget.style.opacity = 1;
+        }
+        if (fadeTarget.style.opacity < 0.1) {
+            clearInterval(fadeEffect);
+            fadeTarget.remove();
+        } else {
+            fadeTarget.style.opacity -= 0.1;
+        }
+    }, 10);
+}
+
 function gameInit() {
-    console.log('Game Init');
     console.table(results);
 
     document.getElementById('gameArea').classList.add('gameon');
+    window.scrollBy({ 
+        top: document.getElementById('gameArea').offsetTop, // could be negative value
+        left: 0, 
+        behavior: 'smooth' 
+    })
+    setupFade();
 
     var gameParent = document.getElementById(parent_div)
 

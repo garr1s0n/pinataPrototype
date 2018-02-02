@@ -15,7 +15,7 @@
     <body>
         <!-- Begin App -->
         <main class="wrapper">
-            <div class="container">
+            <div class="container gameSetup" id="gameSetup">
                 <div class="row">
                     <div class="column">
                         <section class="pregame container">
@@ -61,30 +61,22 @@
                             </div>
                         </section>
                     </div>
-                    <div class="column">
-                        <section class="game container">
-                            <div class="row">
-                                <div class="column">
-                                    <div id="gameArea">
-                                        <h1>Pi&ntilde;ata Game!</h1>
-                                        <p>Click on the pia&ntilde;ata to hit it with the bat.<br>No candy yet, though&hellip; the game is still in development!</p>
-                                        <div class="gameSizer">
-                                            <div class="gameContainer" id="gameContainer">
-                                                <div class="pinata">
-                                                    <img src="img/pinata.png" alt="Pinata" id="pinataTarget" />
-                                                </div>
-                                                <div id="swingArea" class="swingArea">
-                                                    <img src="img/stick.png" alt="Stick" class="stick" id="stick" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
                 </div>
             </div>
+            <section class="game">
+                <div id="gameArea">
+                    <div class="gameSizer">
+                        <div class="gameContainer" id="gameContainer">
+                            <div class="pinata">
+                                <img src="img/pinata.png" alt="Pinata" id="pinataTarget" />
+                            </div>
+                            <div id="swingArea" class="swingArea">
+                                <img src="img/stick.png" alt="Stick" class="stick" id="stick" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <!-- End App -->
